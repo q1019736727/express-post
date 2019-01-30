@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/q1019736727/express-post#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "express-generator": "^4.16.0"
   }
 }
