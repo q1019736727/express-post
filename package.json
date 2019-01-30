@@ -1,0 +1,23 @@
+{
+  "name": "express-post",
+  "version": "1.0.0",
+  "description": "express-post",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/q1019736727/express-post.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/q1019736727/express-post/issues"
+  },
+  "homepage": "https://github.com/q1019736727/express-post#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
