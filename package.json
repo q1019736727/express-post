@@ -1,24 +1,16 @@
 {
   "name": "express-post",
-  "version": "1.0.0",
-  "description": "express-post",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/q1019736727/express-post.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/q1019736727/express-post/issues"
-  },
-  "homepage": "https://github.com/q1019736727/express-post#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "express-generator": "^4.16.0"
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "ejs": "~2.5.7",
+    "express": "~4.16.0",
+    "http-errors": "~1.6.2",
+    "morgan": "~1.9.0"
   }
 }
