@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var axios = require('axios')
+
 var app = express();
 
 // view engine setup
@@ -18,6 +20,27 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+/********************************************************************************************************/
+
+//设置允许跨域访问该服务.
+app.all('*', function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    res.header('Access-Control-Allow-Methods', '*');
+    res.header('Content-Type', 'application/json;charset=utf-8');
+    next();
+});
+
+app.use('/test',function (req,res,next) {
+    axios.get('https://www.universelife.cn/activity/api/v1.0/communityActCon/homePageList', {
+    }).then(function (response) {
+      console.log('---',response.data);
+      res.send(response.data)
+    })
+})
+
+/********************************************************************************************************/
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
