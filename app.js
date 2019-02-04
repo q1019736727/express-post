@@ -23,7 +23,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 /********************************************************************************************************/
-
 //设置允许跨域访问该服务.
 app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -51,7 +50,6 @@ app.use('/api/bannerCon/bannerShow', function (req, res, next) {
         res.send(response.data)
     })
 })
-
 /********************************************************************************************************/
 
 app.use('/', indexRouter);
