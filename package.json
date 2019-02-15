@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "webpack": "webpack --config ./src/webpack.config.js"
+    "webpack": "webpack --config ./src/webpack.config.js",
+    "watch": "onchange 'src/**/*.js' 'src/**/*.less' -- npm run webpack"
   },
   "dependencies": {
     "autoprefixer": "^9.4.7",
