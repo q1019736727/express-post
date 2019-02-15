@@ -1,7 +1,7 @@
 
-var test = require('./test.js')
-var fn = function () {
-    console.log(test)
-}
-module.exports = fn
+var Toast = require('../mod/toast.js').Toast
+
+Toast('调试成功')
+
+
 
