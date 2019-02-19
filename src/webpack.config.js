@@ -14,7 +14,7 @@ module.exports = {
             test: /\.less$/,
             use: ExtractTextPlugin.extract({
                 fallback: "style-loader",
-                use: ["css-loader", "less-loader", "postcss-loader", "scss-loader"]
+                use: ["css-loader", "less-loader", "postcss-loader"]
             }) //把 css 抽离出来生成一个文件
         }]
     },
@@ -29,14 +29,14 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery"
         }),
-    //     new ExtractTextPlugin("css/index.css"),
-    //     new webpack.LoaderOptionsPlugin({
-    //         options: {
-    //             postcss: [
-    //                 autoprefixer(),
-    //             ]
-    //         }
-    //     })
+        // new ExtractTextPlugin("css/index.css"),
+        // new webpack.LoaderOptionsPlugin({
+        //     options: {
+        //         postcss: [
+        //             autoprefixer(),
+        //         ]
+        //     }
+        // })
     //     // new webpack.optimize.UglifyJsPlugin({
     //     //     compress: {
     //     //         warnings: false,
