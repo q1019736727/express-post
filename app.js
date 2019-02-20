@@ -44,9 +44,7 @@ app.use('/api/bannerCon/bannerShow', function (req, res, next) {
     axios.get('https://www.universelife.cn/heli-oms/api/bannerCon/bannerShow', {
         params:code(req.query)
     }).then(function (response) {
-        console.log('----',req.query,'------')
-        console.log(code(req.query))
-        // console.log('---', response.data);
+        console.log('成功数据---', response.data);
         res.send(response.data)
     })
 })
