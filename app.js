@@ -6,9 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-var axios = require('axios')
-var code = require('./codeParams')
+var apiRouter = require('./routes/api')
 
 var app = express();
 
@@ -22,7 +20,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/********************************************************************************************************/
+/************************************************* api接口 *******************************************************/
 //设置允许跨域访问该服务.
 app.all('*', function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -31,25 +29,7 @@ app.all('*', function (req, res, next) {
     res.header('Content-Type', 'application/json;charset=utf-8');
     next();
 });
-
-//社区活动
-app.use('/api/v1.0/communityActCon/homePageList', function (req, res, next) {
-    axios.get('https://www.universelife.cn/activity/api/v1.0/communityActCon/homePageList', {}).then(function (response) {
-        console.log('---', response.data);
-        res.send(response.data)
-    })
-})
-//banner
-app.use('/api/bannerCon/bannerShow', function (req, res, next) {
-    axios.get('https://www.universelife.cn/heli-oms/api/bannerCon/bannerShow', {
-        params:code(req.query)
-    }).then(function (response) {
-        console.log('----',req.query,'------')
-        console.log(code(req.query))
-        // console.log('---', response.data);
-        res.send(response.data)
-    })
-})
+app.use('/api',apiRouter)
 /********************************************************************************************************/
 
 app.use('/', indexRouter);

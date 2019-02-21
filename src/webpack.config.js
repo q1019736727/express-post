@@ -29,14 +29,14 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery"
         }),
-        // new ExtractTextPlugin("css/index.css"),
-        // new webpack.LoaderOptionsPlugin({
-        //     options: {
-        //         postcss: [
-        //             autoprefixer(),
-        //         ]
-        //     }
-        // })
+        new ExtractTextPlugin("styles.css"),
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                postcss: [
+                    autoprefixer(),
+                ]
+            }
+        })
     //     // new webpack.optimize.UglifyJsPlugin({
     //     //     compress: {
     //     //         warnings: false,
