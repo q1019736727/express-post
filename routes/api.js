@@ -35,5 +35,14 @@ router.get('/travel/travelActList',function (req,res,next) {
     })
 })
 
+//activityDetail
+router.get('/travel/travelAct',function (req,res,next) {
+    axios.get(host_url+'/heli-oms/api/travel/travelAct', {
+        params:code(req.query)
+    }).then(function (response) {
+        console.log(response.data);
+        res.send(response.data)
+    })
+})
 
 module.exports = router;
